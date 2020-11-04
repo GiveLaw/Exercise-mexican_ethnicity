@@ -1,4 +1,4 @@
-# Exercise
+# Exercise *Mexican ethnicity*
 ## Readme (English)
 
 ### About:
@@ -34,7 +34,7 @@ The Program/App is completely in Spanish
 ***
 
 
-# Ejercicio
+# Ejercicio *Etnia Mexicana*
 ## Léeme (Español)
 
 ### Acerca de:
