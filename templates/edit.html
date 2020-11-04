@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h2>{% block title %}Editar{% endblock %} <strong>{{ post['title'] }}</strong></h2>
+	<form method="POST">
+		<div class="form-group modal-header mx-xl-n4">
+			<input class="form-control mx-xl-3" type="text" name="nombre" placeholder="Nombre" value="{{ request.form['name'] or post['name'] }}" required autocomplete>
+			<br>
+			<input class="form-control mx-xl-3" type="email" name="correo" placeholder='nombre@ejemplo.com' value="{{ request.form['email'] or post['email'] }}" required autocomplete>
+		</div>
+		<div class="form-group">
+			<label for='titulo'>Título</label>
+			<input class="form-control" type="text" name="titulo" placeholder="Nuevo Título" value="{{ request.form['title'] or post['title'] }}" required>
+		</div>
+		<div class="form-group">
+			<label for='contenido'>Contenido</label>
+			<textarea class="form-control" type="text" name="contenido" placeholder='Escribe el nuevo contenido' required>{{ request.form['content'] or post['content'] }}</textarea>
+		</div>
+		<div class="modal-footer">
+			<button type='submit' class="btn btn-info">Guardar</button>
+			<!-- eliminar una historia: -->
+			<a href="/{{post.id}}/delete" class="btn btn-secondary">Eliminar</a>
+			<input class='btn btn-dark' type="button" value="Cancelar" onClick="history.go(-1);">
+		</div>
+	</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h2>{% block title %}Crear{% endblock %} un nuevo 'POST'</h2>
+	<form method="POST">
+		<div class="form-group modal-header mx-xl-n4">
+			<!-- <label for='nombre'>Nombre:</label> -->
+			<input class="form-control mx-xl-3" type="text" name="nombre" placeholder="Nombre" value="{{ request.form['nombre'] }}" required autocomplete>
+			<br>
+			<!-- <label for='correo'>Correo/E-mail:</label> -->
+			<input class="form-control mx-xl-3" type="email" name="correo" placeholder="Correo: name@ejemplo.com" value="{{ request.form['correo'] }}" required autocomplete>
+		</div>
+		<div class="form-group">
+			<label for='titulo'>Título:</label>
+			<input class="form-control" type="text" name="titulo" placeholder="Mi Título" value="{{ request.form['titulo'] }}" required>
+		</div>
+		<div class="form-group">
+			<label for='content'>Contenido:</label>
+			<textarea class="form-control" type="text" name='contenido' placeholder="Aquí va el contenido del 'post'" required>{{ request.form['contenido'] }}</textarea>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-info" type="submit">Enviar</button>
+			<button class="btn btn-secondary" type="reset">Limpiar</button>
+			<input class='btn btn-dark' type="button" value="Volver" onClick="history.go(-1);">
+		</div>
+	</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h2 class="text-center">{% block title %} {{ post['title'] }} {% endblock %}</h2>
+	<span class='badge badge-light float-right mx-xl-2'>E-mail: <em>{{ post['email'] }}</em></span>
+	<span class="badge badge-light float-right mx-xl-2">Por: <em>{{ post['name'] }}</em></span>
+	<span class="badge badge-light float-right mx-xl-2">Creado: <em>{{ post['created'] }}</em></span>
+	<p class="jumbotron py-md-5">{{ post['content'] }}</p>
+
+	<span class="modal-footer">
+		<!-- editar una historia existente: -->
+		<a href="{{ url_for('edit', id=post['id']) }}">
+			<span class="btn btn-secondary">Editar</span>
+		</a>
+		<input class='btn btn-info' type="button" value="Volver" onClick="history.go(-1);">
+	</span>
+{% endblock %}

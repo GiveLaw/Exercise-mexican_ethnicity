@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1 class="text-center py-5">{% block title %}Bienvenido{% endblock %} Aquí puedes conocer más de los bordados de las etnias mexicanas</h1>
+	<p>
+		Las etnias mexicanas han desarrollado su trabajo manual de bordados durante muchos años pero la gente nos los reconoce y hay otros que se hacen uso de esa propiedad intelectual sin dar reconocimiento o pagando lo menos posible.
+		<br>
+		Necesitamos que las personas puedan conocer más sobre los bordados y sobre quienes los hacen y sus costos reales.
+	</p>
+	{% for p in posts %}
+	<!-- mostrando la lista de historias: -->
+		<a href="{{ url_for('story', id=p['id']) }}" class="">
+			<h3 class="text-dark">
+				{{ p['title'] }}
+			</h3>
+		</a>
+		<span class='badge badge-light float-right mx-xl-2'>E-mail: <em>{{ p['email'] }}</em></span>
+		<span class="badge badge-light float-right mx-xl-2">Por: <em>{{ p['name'] }}</em></span>
+		<span class="badge badge-light float-right mx-xl-2">Creado: <em>{{ p['created'] }}</em></span>
+		<!-- crear un nueva historia -->
+		<!-- editar una historia existente: -->
+		<a href="{{ url_for('edit', id=p['id']) }}">
+			<span class="badge badge-info">Editar</span>
+		</a>
+		<hr>
+	{% endfor %}
+
+{% endblock %}

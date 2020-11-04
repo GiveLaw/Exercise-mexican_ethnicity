@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h2 class="text-center">Ha Ocurrido un {% block title %}Error{% endblock %}</h2>
+	<strong class="text-info">Tipo de Error:</strong>
+	<pre class="jumbotron py-md-2">
+		<code>
+			{{ error }}
+		</code>
+	</pre>
+	<ul>
+		<h3 class="text-sm-left">Posibles Soluciones:</h3>
+		<li>Verifique si el <strong>Título</strong> no está 'repetido'.</li>
+		<li>Verifique que todos los campos esten correctamente llenados.</li>
+	</ul>
+
+	<ul>
+		<h3 class="text-sm-left">Si el Error persiste, puede contactarme:</h3>
+		<li>tiusdiux.com@gmail.com</li>
+		<li>GiveLaw</li>
+		<li>@Dario0048</li>
+	</ul>
+	<input class="btn btn-primary" type="button" value="Volver" onClick="history.go(-1);">
+{% endblock %}
