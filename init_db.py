@@ -7,7 +7,7 @@ def first_execute():
     		CREATE TABLE IF NOT EXISTS people(
     			id INTEGER PRIMARY KEY AUTOINCREMENT,
     			name TEXT VARCHAR(30),
-    			email TEXT VARCHAR(50),
+    			email TEXT VARCHAR(20),
                 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 title TEXT NOT NULL UNIQUE,
     			content TEXT UNIQUE
